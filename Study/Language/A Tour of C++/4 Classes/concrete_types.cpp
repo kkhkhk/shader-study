@@ -1,5 +1,6 @@
 #include <initializer_list>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
@@ -81,6 +82,7 @@ public:
 
     double &operator[](int i);
     int size() const;
+    void push_back(double);
 };
 
 void fct(int n)
@@ -98,3 +100,10 @@ void fct(int n)
 
 } // v is destroyed here
 
+Vector read(istream& is)
+{
+    Vector v(3);
+    for (double d; is >> d;)
+        v.push_back(d);
+    return v;
+}
