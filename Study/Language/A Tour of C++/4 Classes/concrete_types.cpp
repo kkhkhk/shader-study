@@ -1,3 +1,8 @@
+#include <initializer_list>
+#include <algorithm>
+
+using namespace std;
+
 class complex
 {
 private:
@@ -67,6 +72,11 @@ public:
             elem[i] = 0;
     }
 
+    Vector(initializer_list<double> lst) : elem{new double[lst.size()]}, sz{static_cast<int>(lst.size())} // initialize with a list of doubles
+    {
+        copy(lst.begin(), lst.end(), elem);
+    }
+
     ~Vector() { delete[] elem; } // destructor: release resources
 
     double &operator[](int i);
@@ -87,3 +97,4 @@ void fct(int n)
     // ... use v ..
 
 } // v is destroyed here
+
