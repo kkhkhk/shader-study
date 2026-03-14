@@ -72,3 +72,18 @@ public:
     double &operator[](int i);
     int size() const;
 };
+
+void fct(int n)
+{
+    Vector v(n);
+
+    // ... use v ...
+
+    {
+        Vector v2(2 * n);
+        // ... use v and v2 ...
+    } // v2 is destroyed here
+
+    // ... use v ..
+
+} // v is destroyed here
