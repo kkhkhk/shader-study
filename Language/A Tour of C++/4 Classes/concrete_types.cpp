@@ -4,9 +4,9 @@ private:
     double re, im; // representation: two doubles
 
 public:
-    complex(double r, double i) : re{r}, im{i} {}; // construct complex from two scalars
-    complex(double r) : re{r}, im{0} {};           // construct complex from one scalar
-    complex() : re{0}, im{0} {};                   // default complex;
+    complex(double r, double i) : re{r}, im{i} {} // construct complex from two scalars
+    complex(double r) : re{r}, im{0} {}           // construct complex from one scalar
+    complex() : re{0}, im{0} {}                   // default complex;
 
     double real() const { return re; }
     void real(double d) { re = d; }
@@ -54,3 +54,21 @@ void f(complex z)
     if (c != b)
         c = -(b / a) + 2 * b;
 }
+
+class Vector
+{
+private:
+    double *elem; // elem points to an array of sz doubles
+    int sz;
+public:
+    Vector(int s) : elem{new double[s]}, sz{s} // constructor: acquire resources
+    {
+        for (int i = 0; i != s; ++i) // initialize elements
+            elem[i] = 0;
+    }
+
+    ~Vector() { delete[] elem; } // destructor: release resources
+
+    double &operator[](int i);
+    int size() const;
+};
