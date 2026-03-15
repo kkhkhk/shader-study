@@ -1,4 +1,5 @@
 #include <iostream>
+#include "concrete_types.cpp"
 
 using namespace std;
 
@@ -17,3 +18,16 @@ void use(Container& c)
     for (int i = 0; i != sz; i++)
         cout << c[i] << '\n';
 }
+
+class Vector_container : public Container
+{
+private:
+    Vector v;
+
+public:
+    Vector_container(int s) : v(s) {}
+    ~Vector_container() {}
+
+    double &operator[](int i) { return v[i]; }
+    int size() const { return v.size(); }
+};
