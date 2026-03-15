@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 class Container
 {
 public:
@@ -6,3 +10,10 @@ public:
     virtual ~Container() {}              // destructor
 };
 
+void use(Container& c)
+{
+    const int sz = c.size();
+
+    for (int i = 0; i != sz; i++)
+        cout << c[i] << '\n';
+}
