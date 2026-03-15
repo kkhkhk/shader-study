@@ -1,6 +1,8 @@
 #include <iostream>
 #include <initializer_list>
 #include "concrete_types.cpp"
+#include <list>
+#include <stdexcept>
 
 using namespace std;
 
@@ -38,4 +40,29 @@ void g()
 {
     Vector_container vc{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     use(vc);
+}
+
+class List_container : public Container // List_container implements Container
+{
+private:
+    list<double> ld;                    // (standard-library) list of doubles
+
+public:
+    List_container() {}                 // empty List
+    List_container(initializer_list<double> il) : ld{il} {}
+    ~List_container() {}
+
+    double &operator[](int i);
+    int size() const { return ld.size(); }
+};
+
+double &List_container::operator[](int i)
+{
+    for (auto& x : ld)
+    {
+        if (i == 0)
+            return x;
+        --i;
+    }
+    throw out_of_range("List container");
 }
