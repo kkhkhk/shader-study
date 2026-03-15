@@ -11,6 +11,9 @@ public:
     Vector(const Vector &a);            // copy constructor
     Vector &operator=(const Vector &a); // copy assignment
 
+    Vector(Vector &&a);                 // move constructor
+    Vector &operator=(Vector &&a);      // move assignment
+
     double &operator[](int i);
     const double &operator[](int i) const;
 
@@ -32,4 +35,10 @@ Vector &Vector::operator=(const Vector &a) // copy assignment
     elem = p;
     sz = a.sz;
     return *this;
+}
+
+Vector::Vector(Vector &&a) : elem{a.elem}, sz{a.sz} // 'grab the elements' from a
+{
+    a.elem = nullptr;                               // now a has no elements
+    a.sz = 0;
 }
