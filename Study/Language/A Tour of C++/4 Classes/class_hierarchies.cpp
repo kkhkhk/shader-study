@@ -24,3 +24,21 @@ void rotate_all(vector<Shape*>& v, int angle) // rotate v's elements by angle de
     for (auto p : v)
         p->rotate(angle);
 }
+
+class Circle : public Shape
+{
+private:
+    Point c; // center
+    int r;   // radius
+
+public:
+    Circle(Point p, int rr); // constructor
+
+    Point center() const { return c; }
+    void move(Point to) { c = to; }
+
+    void draw() const;
+    void rotate(int) {}
+};
+
+
