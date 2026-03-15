@@ -1,3 +1,7 @@
+#include <utility>
+
+using namespace std;
+
 class Vector
 {
 private:
@@ -41,4 +45,14 @@ Vector::Vector(Vector &&a) : elem{a.elem}, sz{a.sz} // 'grab the elements' from 
 {
     a.elem = nullptr;                               // now a has no elements
     a.sz = 0;
+}
+
+Vector f()
+{
+    Vector x(1000);
+    Vector y(1000);
+    Vector z(1000);
+    z = x;          // we get a copy
+    y = move(x);    // we get a move
+    return z;       // we get a move
 }
