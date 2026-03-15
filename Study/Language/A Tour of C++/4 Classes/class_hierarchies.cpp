@@ -1,3 +1,12 @@
+#include <vector>
+
+using namespace std;
+
+struct Point
+{
+    double x, y;
+};
+
 class Shape
 {
 public:
@@ -9,3 +18,9 @@ public:
 
     virtual ~Shape() {}               // destructor
 };
+
+void rotate_all(vector<Shape*>& v, int angle) // rotate v's elements by angle degrees
+{
+    for (auto p : v)
+        p->rotate(angle);
+}
