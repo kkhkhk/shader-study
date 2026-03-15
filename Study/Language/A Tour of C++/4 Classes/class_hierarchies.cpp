@@ -57,10 +57,10 @@ public:
             delete p;
     }
 
-    void move(Point to);
+    void move(Point to) override;
 
-    void draw() const;
-    void rotate(int);
+    void draw() const override;
+    void rotate(int) override;
 
     void add_eye(Shape *s) { eyes.push_back(s); }
     void set_mouth(Shape *s);
