@@ -1,5 +1,6 @@
 #include <string>
 #include <list>
+#include <iostream>
 
 using namespace std;
 
@@ -37,3 +38,7 @@ const T &Vector<T>::operator[](int i) const
         throw out_of_range{"Vector::operator[]"};
     return elem[i];
 }
+
+Vector<char> vc(200);
+Vector<string> vs(17);
+Vector<list<int>> vli(45);
