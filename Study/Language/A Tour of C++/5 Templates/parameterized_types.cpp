@@ -42,3 +42,9 @@ const T &Vector<T>::operator[](int i) const
 Vector<char> vc(200);
 Vector<string> vs(17);
 Vector<list<int>> vli(45);
+
+void write(const Vector<string> &vs)
+{
+    for (int i = 0; i != vs.size(); ++i)
+        cout << vs[i] << "\n";
+}
