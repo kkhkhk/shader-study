@@ -54,3 +54,9 @@ T *begin(Vector<T> &x)
 {
     return x.size() ? &x[0] : nullptr;
 }
+
+template<typename T>
+T *end(Vector<T> &x)
+{
+    return begin(x) + x.size();
+}
