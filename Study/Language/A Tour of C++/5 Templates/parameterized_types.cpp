@@ -60,3 +60,9 @@ T *end(Vector<T> &x)
 {
     return begin(x) + x.size();
 }
+
+void f2(Vector<string> &vs)
+{
+    for (auto &s: vs)
+        cout << s << '\n';
+}
