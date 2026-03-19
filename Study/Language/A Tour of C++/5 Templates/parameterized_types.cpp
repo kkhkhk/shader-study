@@ -48,3 +48,9 @@ void write(const Vector<string> &vs)
     for (int i = 0; i != vs.size(); ++i)
         cout << vs[i] << "\n";
 }
+
+template<typename T>
+T *begin(Vector<T> &x)
+{
+    return x.size() ? &x[0] : nullptr;
+}
