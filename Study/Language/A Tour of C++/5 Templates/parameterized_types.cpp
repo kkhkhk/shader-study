@@ -66,3 +66,12 @@ void f2(Vector<string> &vs)
     for (auto &s: vs)
         cout << s << '\n';
 }
+
+template<typename T, int N>
+struct Buffer
+{
+    using value_type = T;
+    constexpr int size() { return N; }
+    T[N];
+    // ...
+};
