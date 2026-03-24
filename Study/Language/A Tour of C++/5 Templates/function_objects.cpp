@@ -42,3 +42,15 @@ void f(const Vector<int> &vec, const list<string> &lst, int x, const string &s)
          << ": " << count(lst, Less_than<string>{s})
          << "\n";
 }
+
+void f_lambda(const Vector<int> &vec, const list<string> &lst, int x, const string &s)
+{
+    cout << "number of values less than " << x
+         << ": " << count(vec, [&](int a)
+                          { return a < x; })
+         << "\n";
+    cout << "number of values less than " << s
+         << ": " << count(lst, [&](const string &a)
+                          { return a < s; })
+         << "\n";
+}
