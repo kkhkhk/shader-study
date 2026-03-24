@@ -18,3 +18,13 @@ void fct(int n, const string &s)
     bool b1 = lti(n);
     bool b2 = lts(s);
 }
+
+template<typename C, typename P>
+int count(const C &c, P pred)
+{
+    int cnt = 0;
+    for (const auto &x : c)
+        if (pred(x))
+            ++cnt;
+    return cnt;
+}
