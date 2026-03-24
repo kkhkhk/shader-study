@@ -1,4 +1,8 @@
 #include <string>
+#include <list>
+#include <vector>
+
+#include "parameterized_types.cpp"
 
 using namespace std;
 
@@ -27,4 +31,14 @@ int count(const C &c, P pred)
         if (pred(x))
             ++cnt;
     return cnt;
+}
+
+void f(const Vector<int> &vec, const list<string> &lst, int x, const string &s)
+{
+    cout << "number of values less than " << x
+         << ": " << count(vec, Less_than<int>{x})
+         << "\n";
+    cout << "number of values less than " << s
+         << ": " << count(lst, Less_than<string>{s})
+         << "\n";
 }
