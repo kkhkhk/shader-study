@@ -54,3 +54,10 @@ void f_lambda(const Vector<int> &vec, const list<string> &lst, int x, const stri
                           { return a < s; })
          << "\n";
 }
+
+template<typename C, typename Oper>
+void for_all(C &c, Oper op)     // assume that C is a container of pointers
+{
+    for (auto &x: c)
+        op(*x);                 // pass op() a reference to each element pointed to
+}
