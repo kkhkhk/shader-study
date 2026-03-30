@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <string>
 
 using size_t = unsigned int;
 
@@ -19,3 +20,9 @@ void algo(Container &c)
     Vector<Element_type<Container>> vec;        // keep results here
     // ... 
 }
+
+template<typename Key, typename Value>
+class Map
+{
+    // ...
+};
