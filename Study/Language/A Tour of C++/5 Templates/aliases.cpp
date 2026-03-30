@@ -12,3 +12,10 @@ public:
 
 template <typename C>
 using Element_type = typename C::value_type;    // the type of C's elements
+
+template<typename Container>
+void algo(Container &c)
+{
+    Vector<Element_type<Container>> vec;        // keep results here
+    // ... 
+}
