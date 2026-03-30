@@ -26,3 +26,8 @@ class Map
 {
     // ...
 };
+
+template <typename Value>
+using String_map = Map<string, Value>;
+
+String_map<int> m;  // m is a Map<string, int>
