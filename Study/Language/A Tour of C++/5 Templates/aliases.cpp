@@ -9,3 +9,6 @@ public:
     using value_type = T;
     // ...
 };
+
+template <typename C>
+using Element_type = typename C::value_type;    // the type of C's elements
