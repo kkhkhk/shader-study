@@ -14,3 +14,18 @@ void m2(string &s1, string &s2)
     s1 = s1 + '\n';
     s2 += '\n';
 }
+
+string incantation;
+
+void respond(const string &answer)
+{
+    if (answer == incantation)
+    {
+        // perform magic
+    }
+    else if (answer == "yes")
+    {
+        // ...
+    }
+    // ...
+}
