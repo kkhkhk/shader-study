@@ -6,3 +6,5 @@ string compose(const string &name, const string &domain)
 {
     return name + '@' + domain;
 }
+
+auto addr = compose("dmr", "Bell-labs.com");
