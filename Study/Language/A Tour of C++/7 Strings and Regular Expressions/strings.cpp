@@ -16,6 +16,15 @@ void m2(string &s1, string &s2)
     s2 += '\n';
 }
 
+string name = "Niels Stroustrup";
+
+void m3()
+{
+    string s = name.substr(6, 10);
+    name.replace(0, 5, "nicholas");
+    name[0] = toupper(name[0]);
+}
+
 string incantation;
 
 void respond(const string &answer)
