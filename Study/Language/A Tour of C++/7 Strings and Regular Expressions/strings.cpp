@@ -36,3 +36,5 @@ void print(const string &s)
     printf("For people who like printf: %s\n", s.c_str());
     cout << "For people who like streams: " << s << '\n';
 }
+
+using wstring = basic_string<wchar_t>;
