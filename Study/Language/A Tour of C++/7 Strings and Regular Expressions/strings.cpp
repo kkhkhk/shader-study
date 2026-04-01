@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -28,4 +29,10 @@ void respond(const string &answer)
         // ...
     }
     // ...
+}
+
+void print(const string &s)
+{
+    printf("For people who like printf: %s\n", s.c_str());
+    cout << "For people who like streams: " << s << '\n';
 }
